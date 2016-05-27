@@ -8,7 +8,7 @@
  * }
  */
  
-// Binary Search (DFS) --> best
+// Binary Search (DFS)
 // public class Solution {
 //     public int kthSmallest(TreeNode root, int k) {
 //         int count = countNodes(root.left);
@@ -69,4 +69,6 @@ public class Solution {
         return -1; // never hit if k is valid
     }
 }
+
+
 

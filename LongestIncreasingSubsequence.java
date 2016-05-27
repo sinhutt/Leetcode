@@ -22,3 +22,5 @@ public class Solution {
         // O(nlogn)
     }
 }
+
+count of smaller numbers after self
