@@ -7,9 +7,11 @@ public class Solution {
         map.put('6', '9');
         map.put('8', '8');
         map.put('9', '6');
-        int l = 1, r = num.length();
+        int l = 0, r = num.length() - 1;
         while (l < r) {
-            if (!map.containsKey(nums.charAt(l)) || map.get(nums.charAt(l) != map.get(nums.charAt(r)))
+            // only map.get(num.charAt(l)), not map.get(num.charAt(r))
+            // otherwise: NullPpointerException
+            if (!map.containsKey(num.charAt(l)) || num.charAt(r) != map.get(num.charAt(l))) 
                 return false;
             l++;
             r--;
