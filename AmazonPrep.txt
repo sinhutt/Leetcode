@@ -17,16 +17,15 @@
 153. Find Minimum in Rotated Sorted Array
 24. Swap Nodes in Pairs
 41. First Missing Positive
+252. Meeting Rooms 
+253. Meeting Rooms II
 
 http://www.geeksforgeeks.org/dynamic-programming-set-32-word-break-problem/
 
 ------
 To-Do:
-252. Meeting Rooms 
-253. Meeting Rooms II
 348. Design Tic-Tac-Toe
 138. Copy List with Random Pointer
-
 
 
 static method
