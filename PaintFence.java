@@ -7,7 +7,7 @@ public class Solution {
         for (int i = 2; i < n; i++) {
             int tmp = diffCol;
             diffCol = (diffCol + sameCol) * (k - 1);
-            sameCol = diffCol;
+            sameCol = tmp;
         }
         return diffCol + sameCol;
     }

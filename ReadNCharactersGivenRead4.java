@@ -10,7 +10,7 @@ public class Solution extends Reader4 {
     public int read(char[] buf, int n) {
         int index = 0;
         char[] tmp = new char[4];
-        while (index < n) {
+        while (n > 0) {
             int count = Math.min(n, read4(tmp));
             for (int i = 0; i < count; i++) {
                 buf[index] = tmp[i];
