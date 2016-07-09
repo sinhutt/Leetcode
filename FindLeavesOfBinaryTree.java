@@ -17,7 +17,7 @@ public class Solution {
         if (root == null) return -1;
         // definition of height for each node in this problem is:
         // its distance to the deepest leaf, where leaf has height 1 and so on.
-        int height = 1 + Math.max(helper(root.left), helper(root.right));
+        int height = 1 + Math.max(helper(root.left, rs), helper(root.right, rs));
         if (rs.size() - 1 < height) {
             List<Integer> list = new ArrayList<Integer>();
             list.add(root.val);
