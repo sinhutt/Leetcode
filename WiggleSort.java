@@ -5,10 +5,10 @@ public class Solution {
          * Step 1: make each [even, odd] pair to be [small, large] --> {1,3,6,9,2,8}
          * Step 2: make each [odd, even] pair to be [large, small] --> {1,6,3,9,2,8} Done!
          */ 
-         for (int i = 1; i < nums.length; i++) {
+         for (int i = 1; i < nums.length; i+=2) {
              if (nums[i-1] > nums[i]) swap(i-1, i, nums);
          }
-         for (int i = 2; i < nums.length; i++) {
+         for (int i = 2; i < nums.length; i+=2) {
              if (nums[i-1] < nums[i]) swap(i-1, i, nums);
          }
     }
