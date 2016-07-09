@@ -6,11 +6,11 @@ public class Solution {
             int offset = str.charAt(0) - 'a';
             String key = "";
             for (int i = 0; i < str.length(); i++) {
-                char c = (char) (str.chatAt(i) - offset);
-                if (c < 'a') c = c + 26;
+                char c = (char) (str.charAt(i) - offset);
+                if (c < 'a') c += 26;
                 key += c;
             }
-            if (!map.contains(key)) {
+            if (!map.containsKey(key)) {
                 List<String> list = new ArrayList<String>();
                 list.add(str);
                 map.put(key, list);
@@ -19,7 +19,7 @@ public class Solution {
             }
         }
         for (String str : map.keySet()) {
-            List<String> list = map.get(key);
+            List<String> list = map.get(str);
             Collections.sort(list);
             rs.add(list);
         }
