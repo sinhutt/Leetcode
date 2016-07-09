@@ -10,12 +10,12 @@ public class Solution {
          * res[0, 2, 5, 5, 0]
          */
          int[] rs = new int[length];
-         for (int[] update : udpates) {
+         for (int[] update : updates) {
              int start = update[0];
              int end = update[1] + 1;
              int value = update[2];
-             rs[start] = value;
-             rs[end] = -value;
+             rs[start] += value;
+             if (end < length) rs[end] -= value;
          }
          int sum = 0;
          for (int i = 0; i < length; i++) {
