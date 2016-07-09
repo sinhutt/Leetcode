@@ -1,6 +1,6 @@
 public class HitCounter {
 
-    private static final MAX_SPAN = 300;
+    private static final int MAX_SPAN = 300;
     private Deque<Integer> deque;
     
     /** Initialize your data structure here. */
