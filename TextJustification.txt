@@ -1,0 +1,61 @@
+public class Solution {
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> rs = new ArrayList<String>();
+        if (words == null || words.length == 0) return rs;
+        int i = 0, len = 0, count = 0, start = 0;
+        while (i <= words.length) {
+            if (i >= 3)
+                System.out.println("i: " + i + "len: " + len + "count: " + count);
+            if (i == words.length) { // last line should be left justified
+                StringBuilder sb = new StringBuilder();
+                for (int k = start; k < i; k++) {
+                    sb.append(words[k]);
+                    if (k != i - 1) sb.append(" ");
+                }
+                int sbLen = sb.length();
+                for (int k = 0; k < maxWidth - sbLen; k++) {
+                    sb.append(" ");
+                }
+                rs.add(sb.toString());
+                i++;
+            } else if (len + count + words[i].length() > maxWidth) {
+                if (count == 1) { // with only one word in a line, we append extra spaces at the end
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(words[start]);
+                    int sbLen = sb.length();
+                    for (int k = 0; k < maxWidth - sbLen; k++) {
+                        sb.append(" ");
+                    }
+                    rs.add(sb.toString());
+                } else { 
+                    int numSpaces = maxWidth - len;
+                    int numSlots = count - 1;
+                    int numSpacesPerSlot = numSpaces / numSlots;
+                    int numExtraSpaces = numSpaces % numSlots;
+                    int extra = 0;
+                    StringBuilder sb = new StringBuilder();
+                    for (int k = start; k < i - 1; k++) {
+                        sb.append(words[k]);
+                        for (int m = 0; m < numSpacesPerSlot; m++) {
+                            sb.append(" ");
+                        }
+                        if (extra < numExtraSpaces) {
+                            sb.append(" ");
+                            extra++;
+                        }
+                    }
+                    sb.append(words[i-1]);
+                    rs.add(sb.toString());
+                }
+                start = i;
+                len = 0;
+                count = 0;
+            } else {
+                len += words[i].length();
+                count++;
+                i++;
+            }
+        }
+        return rs;
+    }
+}
